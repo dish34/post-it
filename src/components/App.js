@@ -1,7 +1,35 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { fetchPosts } from '../actions/posts';
+import { PostList } from './';
+import PropTypes from 'prop-types';
 
-function App() {
-  return <div className="App">App</div>;
+class App extends Component {
+  componentDidMount() {
+    // console.log('IN COMPONENTDID MOUNT');
+    this.props.dispatch(fetchPosts());
+  }
+
+  render() {
+    console.log('props in RENDER', this.props);
+
+    const { posts } = this.props;
+
+    return (
+      <div>
+        <PostList posts={posts} />
+      </div>
+    );
+  }
+}
+function mapStateToProps(state) {
+  return {
+    posts: state.posts,
+  };
 }
 
-export default App;
+App.propTypes = {
+  posts: PropTypes.array.isRequired,
+};
+
+export default connect(mapStateToProps)(App);
