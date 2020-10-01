@@ -1,8 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 const Navabar = () => {
   return (
     <nav className="nav">
       <div className="left-div">
+        <Link to="/"></Link>
         <img src="" at="logo"></img>
       </div>
       <div className="search-container">
@@ -37,9 +39,15 @@ const Navabar = () => {
       </div>
       <div className="nav-links">
         <ul>
-          <li>Log in</li>
-          <li>Log Out</li>
-          <li>Register</li>
+          <li>
+            <Link to="/login">Log in</Link>
+          </li>
+          <li>
+            <Link to="/logout">Log Out</Link>
+          </li>
+          <li>
+            <Link to="/register">Register</Link>
+          </li>
         </ul>
       </div>
     </nav>
