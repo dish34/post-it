@@ -1,4 +1,4 @@
-import { UPDATE_POSTS } from './actionTypes';
+import { LOGIN_START, UPDATE_POSTS } from './actionTypes';
 
 export function fetchPosts() {
   return (dispatch) => {
