@@ -46,7 +46,7 @@ const Navabar = () => {
             <Link to="/logout">Log Out</Link>
           </li>
           <li>
-            <Link to="/register">Register</Link>
+            <Link to="/signup">Register</Link>
           </li>
         </ul>
       </div>

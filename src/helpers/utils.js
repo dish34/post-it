@@ -1,4 +1,5 @@
 export function getFormBody(params) {
+  console.log(params);
   let formBody = [];
 
   for (let property in params) {
