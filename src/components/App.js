@@ -5,6 +5,7 @@ import { PostList, Navbar, Home, Page404, Login, Signup } from './';
 import PropTypes from 'prop-types';
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 import jwtDecode from 'jwt-decode';
+import { authenticateUser } from '../actions/auth';
 // const Signup = () => <div>Signup</div>;
 // const Home = (props) => {
 //   console.log(props);
@@ -22,6 +23,13 @@ class App extends Component {
     if (token) {
       const user = jwtDecode(token);
       console.log('user', user);
+      this.props.dispatch(
+        authenticateUser({
+          email: user.email,
+          name: user.name,
+          _id: user._id,
+        })
+      );
     }
   }
 

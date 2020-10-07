@@ -1,4 +1,10 @@
-import { LOGIN_FAILED, LOGIN_START, LOGIN_SUCCESS } from './actionTypes';
+import {
+  AUTHENTICATE_USER,
+  LOGIN_FAILED,
+  LOGIN_START,
+  LOGIN_SUCCESS,
+  LOGOUT,
+} from './actionTypes';
 import { APIUrls } from '../helpers/urls';
 import { getFormBody } from '../helpers/utils';
 
@@ -17,6 +23,17 @@ export function loginSuccess(user) {
   return {
     type: LOGIN_SUCCESS,
     user,
+  };
+}
+export function authenticateUser(user) {
+  return {
+    type: AUTHENTICATE_USER,
+    user,
+  };
+}
+export function logoutUser(user) {
+  return {
+    type: LOGOUT,
   };
 }
 // asynchronous call from thunk
