@@ -40,11 +40,13 @@ class Navbar extends Component {
         <div className="right-nav">
           {auth.isLoggedin && (
             <li className="user">
-              <img
-                src="https://www.flaticon.com/svg/static/icons/svg/3532/3532842.svg"
-                alt="user-dp"
-                id="user-dp"
-              />
+              <Link to="/settings">
+                <img
+                  src="https://www.flaticon.com/svg/static/icons/svg/3532/3532842.svg"
+                  alt="user-dp"
+                  id="user-dp"
+                />
+              </Link>
               <span>{auth.user.name}</span>
             </li>
           )}
@@ -58,7 +60,7 @@ class Navbar extends Component {
             )}
             {auth.isLoggedin && (
               <li onClick={this.logOut}>
-                <Link to="/logout">Log Out</Link>
+                <Link to="/">Log Out</Link>
               </li>
             )}
             {!auth.isLoggedin && (

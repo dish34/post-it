@@ -7,6 +7,7 @@ import {
   SIGNUP_SUCCESS,
   AUTHENTICATE_USER,
   LOGOUT,
+  CLEAR_AUTH_STATE,
 } from '../actions/actionTypes';
 
 const initialAuthState = {
@@ -69,6 +70,11 @@ export default function auth(state = initialAuthState, action) {
         ...state,
         user: {},
         isLoggedin: false,
+      };
+    case CLEAR_AUTH_STATE:
+      return {
+        ...state,
+        error: null,
       };
     default:
       return state;
