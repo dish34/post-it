@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchPosts } from '../actions/posts';
-import { PostList, Navbar, Home, Page404, Login, Signup } from './';
+import { PostList, Navbar, Home, Page404, Login, Signup, Settings } from './';
 import PropTypes from 'prop-types';
 import {
   BrowserRouter as Router,
@@ -17,11 +17,9 @@ import { authenticateUser } from '../actions/auth';
 //   console.log(props);
 //   return <div>Home</div>;
 // };
-const Settings = () => {
-  return <div>Settings</div>;
-};
-const PrivateRoute = (PrivateRouteProps) => {
-  const { isLoggedin, path, component: Component } = PrivateRouteProps;
+
+const PrivateRoute = (privateRouteProps) => {
+  const { isLoggedin, path, component: Component } = privateRouteProps;
 
   return (
     <Route
