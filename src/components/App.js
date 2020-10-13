@@ -12,6 +12,7 @@ import {
 } from 'react-router-dom';
 import jwtDecode from 'jwt-decode';
 import { authenticateUser } from '../actions/auth';
+import { getAuthTokenFromLocalStrorage } from '../helpers/utils';
 // const Signup = () => <div>Signup</div>;
 // const Home = (props) => {
 //   console.log(props);
@@ -52,7 +53,7 @@ class App extends Component {
     // console.log('IN COMPONENTDID MOUNT');
 
     this.props.dispatch(fetchPosts());
-    const token = localStorage.getItem('token');
+    const token = getAuthTokenFromLocalStrorage();
     console.log('token', token);
 
     if (token) {
